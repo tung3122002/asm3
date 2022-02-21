@@ -1,0 +1,85 @@
+{
+  "posts": [
+    {
+      "title": "zxcvbnm",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645107386/civlvahvrj5ehvyga5nn.jpg",
+      "desc": "cxvbnm",
+      "id": 2
+    },
+    {
+      "title": "ádfgh",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645168049/knt9uzzqog1s0mbi0jge.jpg",
+      "desc": "ádfg",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "title": "1234",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645173123/mtjaes8bsbhyhe7tuqjm.jpg",
+      "desc": "222"
+    },
+    {
+      "title": "ÁO KHOÁC PHAO KÈM ĐAI MS 71B8858",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645410998/ou8buadijykn8gmtbegk.jpg",
+      "desc": "1.395.000 ",
+      "id": 5
+    },
+    {
+      "title": "SET BỘ ÁO DÀI Ý CHÂU MS 86M6703",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645411025/rx7hou6coita3wuatzti.jpg",
+      "desc": "1.395.000 ",
+      "id": 6
+    },
+    {
+      "title": "SET BỘ ÁO DÀI Ý CHÂU MS 86M6703",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645411044/jpc3t7pbgjanljfly8yy.jpg",
+      "desc": "1.395.000 ",
+      "id": 7
+    },
+    {
+      "title": "SET BỘ ÁO DÀI Ý CHÂU MS 86M6703",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645411063/q8vtvlcvyehrcwh0zk6t.jpg",
+      "desc": "1.395.000 ",
+      "id": 8
+    },
+    {
+      "title": "SET BỘ ÁO DÀI Ý CHÂU MS 86M6703",
+      "img": "http://res.cloudinary.com/tr-n-t-ng/image/upload/v1645411079/wfhiarbzfly6x7sjgedq.jpg",
+      "desc": "1.395.000 ",
+      "id": 9
+    }
+  ],
+  "products": [],
+  "users": [
+    {
+      "email": "tung3122002@gmail.com",
+      "password": "$2a$10$mnPvaeohx.hzAbPrn4JvIu8KAiIlm3bS2HUNIu6CjeuBlPTiOD31O",
+      "id": 1
+    },
+    {
+      "email": "tungtnph15605@fpt.edu.vn",
+      "password": "$2a$10$SvXk7ofy.miCAi66z2HYceUATINDURIWrHjiCobhRmIbrkAGs7I/e",
+      "id": 2
+    },
+    {
+      "email": "tungtnph1115605@fpt.edu.vn",
+      "password": "$2a$10$9Fx55Sh.HDUdlFBpfy.hCuH5cplAgrdeDTRCs8a8cTRmhZWbTIUsS",
+      "id": 3
+    },
+    {
+      "email": "tung12@gmail.com",
+      "password": "$2a$10$2WUZaEKeaL0W7M7jzpEfyOvcbfJnrGurycVciXDcnj/5NkHvsJD0u",
+      "id": 4
+    },
+    {
+      "email": "123@gmail.com",
+      "password": "$2a$10$mnPvaeohx.hzAbPrn4JvIu8KAiIlm3bS2HUNIu6CjeuBlPTiOD31O",
+      "id": 5
+    },
+    {
+      "email": "tung31211112002@gmail.com",
+      "password": "$2a$10$lUpf3GgKy2DmcarD5pan2eQmaB4z3NW6eZNjlBLDxhZiISoiTZ.FW",
+      "id": 6
+    }
+  ]
+}
