@@ -1,4 +1,6 @@
 import axios from "axios";
+import $ from "jquery";
+import validate from "jquery-validation";
 import navadmin from "../../commoden/navadmin";
 import { add } from "../../api/posts";
 
@@ -85,30 +87,52 @@ const addpost = {
             `;
     },
     afterRender() {
-        const formAddPost = document.querySelector("#form-add-post");
+        const formAddPost = $("#form-add-post");
         const CLOUDINARY_PRESET = "y6g4x0t8";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";
-        formAddPost.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const file = document.querySelector("#file-upload").files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
 
-            const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
-                headers: {
-                    "Content-Type": "application/form-data",
+        formAddPost.validate({
+            rules: {
+                about: {
+                    required: true,
+                    minlength: 5,
                 },
-            });
-            add({
-                name: document.querySelector("#post-name").value,
-                img: data.url,
-                desc: document.querySelector("#post-decs").value,
-                pricecu: document.querySelector("#post-price-cu").value,
-                pricemoi: document.querySelector("#post-price-moi").value,
-            });
-            document.location.href = "/admin";
+            },
+            messages: {
+                about: {
+                    required: "Bắt buộc phải nhập trường này!",
+                    minlength: "Nhập ít nhất 5 ký tự",
+                },
+            },
+            submitHandler() {
+                async function addPostHandle() {
+                    const file = document.querySelector("#file-upload").files[0];
+                    const formData = new FormData();
+                    formData.append("file", file);
+                    formData.append("upload_preset", CLOUDINARY_PRESET);
+
+                    const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                        headers: {
+                            "Content-Type": "application/form-data",
+                        },
+                    });
+                    add({
+                        name: document.querySelector("#post-name").value,
+                        img: data.url,
+                        desc: document.querySelector("#post-decs").value,
+                        pricecu: document.querySelector("#post-price-cu").value,
+                        pricemoi: document.querySelector("#post-price-moi").value,
+                    });
+                    document.location.href = "/admin";
+                }
+                addPostHandle();
+            },
         });
+        // formAddPost.addEventListener("submit", async (e) => {
+        //     e.preventDefault();
+        //    kkk
+        //     document.location.href = "/admin";
+        // });
     },
 };
 export default addpost;
