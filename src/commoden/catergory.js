@@ -51,9 +51,9 @@ const catergory = {
                     src="${post.img}"
                     alt=""></a>
                 <p>
-                <h1><a href="">${post.title}</a></h1>
+                <h1><a href="">${post.name}</a></h1>
                 </p>
-                <p><del>1.890.000 </del> <span>945.000 <sup>đ</sup> </span></p>
+                <p><del>${post.pricecu} </del> <span>${post.pricemoi} <sup>đ</sup> </span></p>
               </div>`).join("")}
                   
                   

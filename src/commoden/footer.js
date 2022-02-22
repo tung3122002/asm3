@@ -33,6 +33,9 @@ const footer = {
   <section class="copyright">
     <p>©Ivymoda All rights reserved</p>
     
+    <div id="editor">
+    <p>Here goes the initial content of the editor.</p>
+</div>
   </section>
       </footer>`;
     },

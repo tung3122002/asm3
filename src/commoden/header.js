@@ -62,6 +62,7 @@ const header = {
         console.log(JSON.parse(localStorage.getItem("user")));
         const email1 = document.getElementById("email1");
         const logout = document.getElementById("logout");
+
         if (email1) {
             email1.innerHTML = JSON.parse(localStorage.getItem("user")).email;
         }

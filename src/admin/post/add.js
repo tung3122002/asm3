@@ -27,19 +27,27 @@ const addpost = {
               
     
               <div>
-                <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
+                <label for="about" class="block text-sm font-medium text-gray-700"> Tên Sản Phẩm </label>
                 <div class="mt-1">
-                  <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                  <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                 </div>
-                <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+
               </div>
     
               <div>
               <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
               <div class="mt-1">
-                <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" ></textarea>
               </div>
-              <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+              <label for="about" class="block text-sm font-medium text-gray-700"> Giá cũ </label>
+              <div class="mt-1">
+              <input id="post-price-cu" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
+              </div>
+              <label for="about" class="block text-sm font-medium text-gray-700"> Giá mới </label>
+              <div class="mt-1">
+              <input id="post-price-moi" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
+              </div>
+        
             </div>
               <div>
                 
@@ -93,9 +101,11 @@ const addpost = {
                 },
             });
             add({
-                title: document.querySelector("#post-name").value,
+                name: document.querySelector("#post-name").value,
                 img: data.url,
                 desc: document.querySelector("#post-decs").value,
+                pricecu: document.querySelector("#post-price-cu").value,
+                pricemoi: document.querySelector("#post-price-moi").value,
             });
             document.location.href = "/admin";
         });

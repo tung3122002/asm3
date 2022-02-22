@@ -1,7 +1,10 @@
+import toastr from "toastr";
 import header from "../commoden/header";
 import footer from "../commoden/footer";
 // import data from "../data";
 import { get } from "../api/posts";
+import "toastr/build/toastr.min.css";
+import { addToCart } from "../rerender/cart";
 
 const products = {
     async  render(id) {
@@ -43,11 +46,11 @@ const products = {
             </div>
             <div class="products-conten-right">
               <div class="products-conten-right-name">
-                <h1>ÁO KHOÁC PHAO KÈM ĐAI MS 71B8858</h1>
+                <h1>${data.name}</h1>
                 <p>MSP: 71B8858</p>
               </div>
               <div class="products-conten-right-gia">
-               <p><span><del>2.790.000</del></span> <sup>Đ</sup> <span>2.790.000</span> <sup>Đ</sup>  </p>
+               <p><span><del>${data.pricecu}</del></span> <sup>Đ</sup> <span>${data.pricemoi}</span> <sup>Đ</sup>  </p>
                 
               </div>
               <div class="products-conten-right-mau">
@@ -99,12 +102,13 @@ const products = {
               </div>
               <div class="soluong">
                 <p style="font-weight: bold;">Số lượng</p>
-                <input type="number" min="0" value="1" name="" id="">
+                <input type="number"  id="inputValue">
                
               </div>
               <p style="color: red;">Vui lòng chọn size</p>
               <div class="products-conten-right-button">
-                <button><i class="fa fa-shopping-basket" aria-hidden="true"></i><p>Mua Hàng</p></button>
+           
+                <button data-id="${data.id}" id="btnAddToCart"><i class="fa fa-shopping-basket" aria-hidden="true"></i><p>Mua Hàng</p></button>
                 <button><a href="">TÌM TẠI CỬA HÀNG</a></button>
               </div>
               <div class="products-conten-right-icon">
@@ -140,19 +144,7 @@ const products = {
                 </div>
                 <div class="products-conten-right-bottom-conten">
                   <div class="products-conten-right-bottom-conten-chitiet">
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
-                  <p>Tham khảo size</p>
+                  <p>${data.desc}</p>
                   </div>
                 </div>
                 </div>
@@ -162,6 +154,21 @@ const products = {
       </section>
       
       ${footer.render()}`;
+    },
+    afterRender() {
+        const btnAddToCart = document.querySelector("#btnAddToCart");
+        const { id } = btnAddToCart.dataset;
+        console.log(id);
+        const inputValue = document.querySelector("#inputValue");
+
+        btnAddToCart.addEventListener("click", async () => {
+            // console.log(inputValue.value)
+            const { data } = await get(id);
+            addToCart({ ...data, quantity: inputValue.value ? inputValue.value : 1 }, () => {
+                toastr.success(`Thêm sản phẩm ${data.name} thành công `);
+            });
+            console.log(data);
+        });
     },
 };
 export default products;

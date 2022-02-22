@@ -49,7 +49,7 @@ const showpost = {
                                 </div>
                               </td>
                               <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">${post.title}</div>
+                                <div class="text-sm text-gray-900">${post.name}</div>
                                 <div class="text-sm text-gray-500">Optimization</div>
                               </td>
                               <td class="px-6 py-4 whitespace-nowrap">
