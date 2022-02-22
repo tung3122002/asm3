@@ -176,7 +176,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
       </section>`}},D={async render(){return` 
         ${await r.render()}
         ${await B.render()}
-        ${f.render()}`},afterRender(){r.afterRender()}};let u=[];localStorage.getItem("cart")&&(u=JSON.parse(localStorage.getItem("cart")));const _=(t,e)=>{const i=u.find(a=>a.id===t.id);i?i.quantity+=+t.quantity:u.push(t),localStorage.setItem("cart",JSON.stringify(u)),e()},J={async render(t){const{data:e}=await h(t);return` 
+        ${f.render()}`},afterRender(){r.afterRender()}};let u=[];localStorage.getItem("cart")&&(u=JSON.parse(localStorage.getItem("cart")));const J=(t,e)=>{const i=u.find(a=>a.id===t.id);i?i.quantity+=+t.quantity:u.push(t),localStorage.setItem("cart",JSON.stringify(u)),e()},U={async render(t){const{data:e}=await h(t);return` 
         ${await r.render()}
         
         <section class="products">
@@ -320,7 +320,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
         </div>
       </section>
       
-      ${f.render()}`},afterRender(){const t=document.querySelector("#btnAddToCart"),{id:e}=t.dataset;console.log(e);const i=document.querySelector("#inputValue");t.addEventListener("click",async()=>{const{data:a}=await h(e);_(S(k({},a),{quantity:i.value?i.value:1}),()=>{c.success(`Th\xEAm s\u1EA3n ph\u1EA9m ${a.name} th\xE0nh c\xF4ng `)}),console.log(a)})}},v={render(){return`<!-- This example requires Tailwind CSS v2.0+ -->
+      ${f.render()}`},afterRender(){const t=document.querySelector("#btnAddToCart"),{id:e}=t.dataset;console.log(e);const i=document.querySelector("#inputValue");t.addEventListener("click",async()=>{const{data:a}=await h(e);J(S(k({},a),{quantity:i.value?i.value:1}),()=>{c.success(`Th\xEAm s\u1EA3n ph\u1EA9m ${a.name} th\xE0nh c\xF4ng `)}),console.log(a)})}},v={render(){return`<!-- This example requires Tailwind CSS v2.0+ -->
         <nav class="bg-gray-800">
           <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
@@ -490,7 +490,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
                
                   
   
-      </section>`},afterRender(){document.querySelectorAll(".btn").forEach(e=>{const{id:i}=e.dataset;e.addEventListener("click",()=>{window.confirm("Ban co muon xoa bai viet nay khong?")&&(A(i),c.success("X\xF3a th\xE0nh c\xF4ng"),T($,"#app"))})})}},U={render(){return`
+      </section>`},afterRender(){document.querySelectorAll(".btn").forEach(e=>{const{id:i}=e.dataset;e.addEventListener("click",()=>{window.confirm("Ban co muon xoa bai viet nay khong?")&&(A(i),c.success("X\xF3a th\xE0nh c\xF4ng"),T($,"#app"))})})}},z={render(){return`
   
 
 
@@ -568,7 +568,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
     </div>
     </div>
 
-            `},afterRender(){const t=document.querySelector("#form-add-post"),e="y6g4x0t8",i="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";t.addEventListener("submit",async a=>{a.preventDefault();const s=document.querySelector("#file-upload").files[0],o=new FormData;o.append("file",s),o.append("upload_preset",e);const{data:d}=await g.post(i,o,{headers:{"Content-Type":"application/form-data"}});O({name:document.querySelector("#post-name").value,img:d.url,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/admin"})}},z={async render(t){const{data:e}=await h(t);return`
+            `},afterRender(){const t=document.querySelector("#form-add-post"),e="y6g4x0t8",i="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";t.addEventListener("submit",async a=>{a.preventDefault();const s=document.querySelector("#file-upload").files[0],o=new FormData;o.append("file",s),o.append("upload_preset",e);const{data:d}=await g.post(i,o,{headers:{"Content-Type":"application/form-data"}});O({name:document.querySelector("#post-name").value,img:d.url,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/admin"})}},V={async render(t){const{data:e}=await h(t);return`
         
             ${v.render()}
             <div>
@@ -639,7 +639,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
             </div>
             </div>
 
-            `},afterRender(t){const e=document.querySelector("#img-preview");let i="";const a=document.querySelector("#file-upload"),s=document.querySelector("#form-edit-post"),o="y6g4x0t8",d="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";a.addEventListener("change",m=>{e.src=URL.createObjectURL(m.target.files[0])}),s.addEventListener("submit",async m=>{m.preventDefault();const y=a.files[0];if(y){const p=new FormData;p.append("file",y),p.append("upload_preset",o);const{data:L}=await g.post(d,p,{headers:{"Content-Type":"application/form-data"}});i=L.url}G({id:t,name:document.querySelector("#post-name").value,img:i||e.src,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/#/admin"})}},V=t=>{const e="/signup";return l.post(e,t)},Y=t=>{const e="/signin";return l.post(e,t)},F={async render(){return`
+            `},afterRender(t){const e=document.querySelector("#img-preview");let i="";const a=document.querySelector("#file-upload"),s=document.querySelector("#form-edit-post"),o="y6g4x0t8",d="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";a.addEventListener("change",m=>{e.src=URL.createObjectURL(m.target.files[0])}),s.addEventListener("submit",async m=>{m.preventDefault();const y=a.files[0];if(y){const p=new FormData;p.append("file",y),p.append("upload_preset",o);const{data:L}=await g.post(d,p,{headers:{"Content-Type":"application/form-data"}});i=L.url}G({id:t,name:document.querySelector("#post-name").value,img:i||e.src,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/#/admin"})}},Y=t=>{const e="/signup";return l.post(e,t)},_=t=>{const e="/signin";return l.post(e,t)},F={async render(){return`
         ${await r.render()}
         <section class="singup">
     <div class="login">
@@ -658,7 +658,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
 </div>
 </section>
 
-      `},afterRender(){document.querySelector("#formSignup").addEventListener("submit",e=>{e.preventDefault(),V({email:document.getElementById("email").value,password:document.getElementById("password").value})})}},W={async render(){return`
+      `},afterRender(){document.querySelector("#formSignup").addEventListener("submit",e=>{e.preventDefault(),Y({email:document.getElementById("email").value,password:document.getElementById("password").value})})}},W={async render(){return`
   
      ${await r.render()}
      <section class="singup">
@@ -681,7 +681,7 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
    
 
 
-      `},afterRender(){const t=document.querySelector("#formSignup");t.addEventListener("submit",async e=>{e.preventDefault();try{const{data:i}=await Y({email:document.getElementById("email").value,password:document.getElementById("password").value});console.log(i.user),localStorage.setItem("user",JSON.stringify(i.user)),i.user.id===1?(c.success("\u0110\u0103ng k\xFD th\xE0nh c\xF4ng"),document.location.href="/#/admin"):document.location.href="/#/"}catch(i){c.error(i.response.data),console.log(i.response),t.reset()}})}},K={render(){let t=[];return localStorage.getItem("cart")&&(t=JSON.parse(localStorage.getItem("cart"))),console.log(t),`
+      `},afterRender(){const t=document.querySelector("#formSignup");t.addEventListener("submit",async e=>{e.preventDefault();try{const{data:i}=await _({email:document.getElementById("email").value,password:document.getElementById("password").value});console.log(i.user),localStorage.setItem("user",JSON.stringify(i.user)),i.user.id===1?(c.success("\u0110\u0103ng k\xFD th\xE0nh c\xF4ng"),document.location.href="/#/admin"):document.location.href="/#/"}catch(i){c.error(i.response.data),console.log(i.response),t.reset()}})}},K={render(){let t=[];return localStorage.getItem("cart")&&(t=JSON.parse(localStorage.getItem("cart"))),console.log(t),`
     ${r.render()}
     <section>
     <div class="container">
@@ -714,4 +714,4 @@ var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropert
         </table>
     </div>
 </section>
-    `}},n=async(t,e)=>{document.querySelector("#app").innerHTML=await t.render(e),t.afterRender&&await t.afterRender(e)},b=new E("/",{linksSelector:"a",hash:!0});b.on("/admin/*/",()=>{},{before(t){localStorage.getItem("user")&&JSON.parse(localStorage.getItem("user")).id==1?t():document.location.href="/"}});b.on({"/":async()=>n(await R),"/admin/posts/:id/edit":({data:t})=>n(z,t.id),"/nu":async()=>n(await D),"/admin":()=>n($),"/addpost":()=>n(U),"/signup":()=>n(F),"/signin":()=>n(W),"/chitiet/:id":({data:t})=>n(J,t.id),"/cart":()=>n(K)});b.resolve();const Q=document.querySelectorAll(".catergory-let-li");Q.forEach((t,e)=>{t.addEventListener("click",()=>{t.classList.toggle("block")})});
+    `}},n=async(t,e)=>{document.querySelector("#app").innerHTML=await t.render(e),t.afterRender&&await t.afterRender(e)},b=new E("/",{linksSelector:"a",hash:!0});b.on("/admin/*/",()=>{},{before(t){localStorage.getItem("user")&&JSON.parse(localStorage.getItem("user")).id==1?t():document.location.href="/"}});b.on({"/":async()=>n(await R),"/admin/posts/:id/edit":({data:t})=>n(V,t.id),"/nu":async()=>n(await D),"/admin":()=>n($),"/addpost":()=>n(z),"/signup":()=>n(F),"/signin":()=>n(W),"/chitiet/:id":({data:t})=>n(U,t.id),"/cart":()=>n(K)});b.resolve();const Q=document.querySelectorAll(".catergory-let-li");Q.forEach((t,e)=>{t.addEventListener("click",()=>{t.classList.toggle("block")})});
