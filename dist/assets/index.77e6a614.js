@@ -1,4 +1,4 @@
-import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))a(i);new MutationObserver(i=>{for(const s of i)if(s.type==="childList")for(const d of s.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&a(d)}).observe(document,{childList:!0,subtree:!0});function o(i){const s={};return i.integrity&&(s.integrity=i.integrity),i.referrerpolicy&&(s.referrerPolicy=i.referrerpolicy),i.crossorigin==="use-credentials"?s.credentials="include":i.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(i){if(i.ep)return;i.ep=!0;const s=o(i);fetch(i.href,s)}};T();const b=async(e,t)=>{e&&(document.querySelector(t).innerHTML=await e.render(),e.afterRender&&e.afterRender())};const r={render(){return`
+var I=Object.defineProperty,j=Object.defineProperties;var M=Object.getOwnPropertyDescriptors;var x=Object.getOwnPropertySymbols;var H=Object.prototype.hasOwnProperty,P=Object.prototype.propertyIsEnumerable;var w=(t,e,i)=>e in t?I(t,e,{enumerable:!0,configurable:!0,writable:!0,value:i}):t[e]=i,k=(t,e)=>{for(var i in e||(e={}))H.call(e,i)&&w(t,i,e[i]);if(x)for(var i of x(e))P.call(e,i)&&w(t,i,e[i]);return t},S=(t,e)=>j(t,M(e));import{t as c,a as g,N as E}from"./vendor.3d4b9f01.js";const C=function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))a(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const d of o.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&a(d)}).observe(document,{childList:!0,subtree:!0});function i(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerpolicy&&(o.referrerPolicy=s.referrerpolicy),s.crossorigin==="use-credentials"?o.credentials="include":s.crossorigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(s){if(s.ep)return;s.ep=!0;const o=i(s);fetch(s.href,o)}};C();const T=async(t,e)=>{t&&(document.querySelector(e).innerHTML=await t.render(),t.afterRender&&t.afterRender())};const r={render(){return`
         <header class="header ">
       <div class="logo">
        <a href="/"> <img src="https://pubcdn.ivymoda.com/images/logo.png" alt=""></a>
@@ -33,7 +33,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
       <div class="other menu">
         <li><input type="text" placeholder="T\xECm" name="" id=""> <button class="fas fa-search"></button></li>
         <li><a class="fa fa-paw" href=""></a></li>
-        <li><a class="fa fa-user" href="/signup"></a>
+        <li><a class="fa fa-user" href="/#/signup"></a>
       ${localStorage.getItem("user")?`
       <ul class="drop-dow">
             <li id="email1"><a href=""></a></li>
@@ -43,14 +43,14 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
           </ul>
       `:""}  
         </li>
-        <li><a class="fa fa-shopping-bag" href=""></a>
+        <li><a class="fa fa-shopping-bag" href="/#/cart"></a>
         
         
         </li>
       </div>
     </header>
     
-        `},afterRender(){console.log(JSON.parse(localStorage.getItem("user")));const e=document.getElementById("email1"),t=document.getElementById("logout");e&&(e.innerHTML=JSON.parse(localStorage.getItem("user")).email),t&&t.addEventListener("click",()=>{localStorage.removeItem("user"),b(r,"#app"),c.success("\u0110\xE3 \u0111\u0103ng xu\u1EA5t")})}},g={render(){return`  <footer>
+        `},afterRender(){console.log(JSON.parse(localStorage.getItem("user")));const t=document.getElementById("email1"),e=document.getElementById("logout");t&&(t.innerHTML=JSON.parse(localStorage.getItem("user")).email),e&&e.addEventListener("click",()=>{localStorage.removeItem("user"),T(r,"#app"),c.success("\u0110\xE3 \u0111\u0103ng xu\u1EA5t")})}},f={render(){return`  <footer>
         <section class="app-container">
           <p>T\u1EA3i \u1EE9ng d\u1EE5ng IVY moda</p>
           <div class="app-gg">
@@ -83,8 +83,11 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
   <section class="copyright">
     <p>\xA9Ivymoda All rights reserved</p>
     
+    <div id="editor">
+    <p>Here goes the initial content of the editor.</p>
+</div>
   </section>
-      </footer>`}},L={render(){return` <section class="slider" id="slider">
+      </footer>`}},q={render(){return` <section class="slider" id="slider">
         <div class="row1">
           <div class="large-12 columns">
             <div class="owl-carousel owl-theme">
@@ -107,12 +110,12 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
   
           </div>
         </div>
-      </section>`}},N={async render(){return`
+      </section>`}},R={async render(){return`
         ${await r.render()}
-        ${await L.render()}
-        ${await g.render()}
+        ${await q.render()}
+        ${await f.render()}
        
-        `},afterRender(){r.afterRender()}},l=m.create({baseURL:"http://localhost:3001",headers:{"Content-Type":"application/json"}}),y=()=>{const e="/posts";return l.get(e)},x=e=>{const t=`/posts/${e}`;return l.get(t)},j=e=>{const t=`/posts/${e}`;return l.delete(t)},M=e=>{const t=`/posts/${e.id}`;return l.put(t,e)},I=e=>{const t="/posts";return l.post(t,e)},H={async render(){const{data:e}=await y();return` <section class="catergory-nam">
+        `},afterRender(){r.afterRender()}},l=g.create({baseURL:"http://localhost:3001",headers:{"Content-Type":"application/json"}}),N=()=>{const t="/posts";return l.get(t)},h=t=>{const e=`/posts/${t}`;return l.get(e)},A=t=>{const e=`/posts/${t}`;return l.delete(e)},G=t=>{const e=`/posts/${t.id}`;return l.put(e,t)},O=t=>{const e="/posts";return l.post(e,t)},B={async render(){const{data:t}=await N();return` <section class="catergory-nam">
         <div class="container">
           <div class="catergory-nam-top row">
             <p>Trang ch\u1EE7</p> <span>\u2192</span>
@@ -152,14 +155,14 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                   </select>
                 </div>
                 <div class="catergory-right-conten row">
-                ${e.map(t=>`<div class="catergory-right-conten-item">
-                <a href="/#/chitiet/${t.id}"><img
-                    src="${t.img}"
+                ${t.map(e=>`<div class="catergory-right-conten-item">
+                <a href="/#/chitiet/${e.id}"><img
+                    src="${e.img}"
                     alt=""></a>
                 <p>
-                <h1><a href="">${t.title}</a></h1>
+                <h1><a href="">${e.name}</a></h1>
                 </p>
-                <p><del>1.890.000 </del> <span>945.000 <sup>\u0111</sup> </span></p>
+                <p><del>${e.pricecu} </del> <span>${e.pricemoi} <sup>\u0111</sup> </span></p>
               </div>`).join("")}
                   
                   
@@ -170,10 +173,10 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
             </div>
           </div>
         </div>
-      </section>`}},P={async render(){return` 
+      </section>`}},D={async render(){return` 
         ${await r.render()}
-        ${await H.render()}
-        ${g.render()}`},afterRender(){r.afterRender()}},R={async render(e){const{data:t}=await x(e);return` 
+        ${await B.render()}
+        ${f.render()}`},afterRender(){r.afterRender()}};let u=[];localStorage.getItem("cart")&&(u=JSON.parse(localStorage.getItem("cart")));const _=(t,e)=>{const i=u.find(a=>a.id===t.id);i?i.quantity+=+t.quantity:u.push(t),localStorage.setItem("cart",JSON.stringify(u)),e()},J={async render(t){const{data:e}=await h(t);return` 
         ${await r.render()}
         
         <section class="products">
@@ -190,7 +193,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
             <div class="products-conten-let row">
               <div class="products-conten-let-big-img">
                 <img
-                  src="${t.img}"
+                  src="${e.img}"
                   alt="">
               </div>
               <div class="products-conten-let-small-img">
@@ -210,11 +213,11 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
             </div>
             <div class="products-conten-right">
               <div class="products-conten-right-name">
-                <h1>\xC1O KHO\xC1C PHAO K\xC8M \u0110AI MS 71B8858</h1>
+                <h1>${e.name}</h1>
                 <p>MSP: 71B8858</p>
               </div>
               <div class="products-conten-right-gia">
-               <p><span><del>2.790.000</del></span> <sup>\u0110</sup> <span>2.790.000</span> <sup>\u0110</sup>  </p>
+               <p><span><del>${e.pricecu}</del></span> <sup>\u0110</sup> <span>${e.pricemoi}</span> <sup>\u0110</sup>  </p>
                 
               </div>
               <div class="products-conten-right-mau">
@@ -266,12 +269,13 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
               </div>
               <div class="soluong">
                 <p style="font-weight: bold;">S\u1ED1 l\u01B0\u1EE3ng</p>
-                <input type="number" min="0" value="1" name="" id="">
+                <input type="number"  id="inputValue">
                
               </div>
               <p style="color: red;">Vui l\xF2ng ch\u1ECDn size</p>
               <div class="products-conten-right-button">
-                <button><i class="fa fa-shopping-basket" aria-hidden="true"></i><p>Mua H\xE0ng</p></button>
+           
+                <button data-id="${e.id}" id="btnAddToCart"><i class="fa fa-shopping-basket" aria-hidden="true"></i><p>Mua H\xE0ng</p></button>
                 <button><a href="">T\xCCM T\u1EA0I C\u1EECA H\xC0NG</a></button>
               </div>
               <div class="products-conten-right-icon">
@@ -307,19 +311,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                 </div>
                 <div class="products-conten-right-bottom-conten">
                   <div class="products-conten-right-bottom-conten-chitiet">
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
-                  <p>Tham kh\u1EA3o size</p>
+                  <p>${e.desc}</p>
                   </div>
                 </div>
                 </div>
@@ -328,7 +320,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
         </div>
       </section>
       
-      ${g.render()}`}},f={render(){return`<!-- This example requires Tailwind CSS v2.0+ -->
+      ${f.render()}`},afterRender(){const t=document.querySelector("#btnAddToCart"),{id:e}=t.dataset;console.log(e);const i=document.querySelector("#inputValue");t.addEventListener("click",async()=>{const{data:a}=await h(e);_(S(k({},a),{quantity:i.value?i.value:1}),()=>{c.success(`Th\xEAm s\u1EA3n ph\u1EA9m ${a.name} th\xE0nh c\xF4ng `)}),console.log(a)})}},v={render(){return`<!-- This example requires Tailwind CSS v2.0+ -->
         <nav class="bg-gray-800">
           <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
@@ -428,9 +420,9 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
             </div>
           </div>
-        </nav>`}},w={async render(){const{data:e}=await y();return` 
+        </nav>`}},$={async render(){const{data:t}=await N();return` 
         <!-- This example requires Tailwind CSS v2.0+ -->
-        ${f.render()}
+        ${v.render()}
         <h1>Qu\u1EA3n l\xFD tin t\u1EE9c</h1>   <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
         <button  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/addpost">Th\xEAm b\xE0i vi\u1EBFt</a></button>
       </div>
@@ -450,15 +442,15 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
             </th>
           </tr>
         </thead>
-        ${e.map(t=>`
-                <a href="/chitiet/${t.id}"><!-- This example requires Tailwind CSS v2.0+ -->
+        ${t.map(e=>`
+                <a href="/chitiet/${e.id}"><!-- This example requires Tailwind CSS v2.0+ -->
                 
                           <tbody class="bg-white divide-y divide-gray-200">
                             <tr>
                               <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                   <div class="flex-shrink-0 h-10 w-10">
-                                    <img class="h-10 w-10 rounded-full" src="${t.img}" alt="">
+                                    <img class="h-10 w-10 rounded-full" src="${e.img}" alt="">
                                   </div>
                                   <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">Jane Cooper</div>
@@ -467,7 +459,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                                 </div>
                               </td>
                               <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">${t.title}</div>
+                                <div class="text-sm text-gray-900">${e.name}</div>
                                 <div class="text-sm text-gray-500">Optimization</div>
                               </td>
                               <td class="px-6 py-4 whitespace-nowrap">
@@ -475,12 +467,12 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                               </td>
                               <td class=" whitespace-nowrap text-right text-sm font-medium">
                               <div class="  text-right sm:px-6">
-                              <button data-id="${t.id}"  class="btn btn-remove inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">DELETE</button>
+                              <button data-id="${e.id}"  class="btn btn-remove inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">DELETE</button>
                             </div>
                             
                             </td>
                               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="/admin/posts/${t.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="/admin/posts/${e.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                               </td>
                             </tr>
                 
@@ -498,7 +490,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                
                   
   
-      </section>`},afterRender(){document.querySelectorAll(".btn").forEach(t=>{const{id:o}=t.dataset;t.addEventListener("click",()=>{window.confirm("Ban co muon xoa bai viet nay khong?")&&(j(o),c.success("X\xF3a th\xE0nh c\xF4ng"),b(w,"#app"))})})}},E={render(){return`
+      </section>`},afterRender(){document.querySelectorAll(".btn").forEach(e=>{const{id:i}=e.dataset;e.addEventListener("click",()=>{window.confirm("Ban co muon xoa bai viet nay khong?")&&(A(i),c.success("X\xF3a th\xE0nh c\xF4ng"),T($,"#app"))})})}},U={render(){return`
   
 
 
@@ -506,7 +498,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
 
 
 
-            ${f.render()}
+            ${v.render()}
             
             
     <div>
@@ -521,19 +513,27 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
               
     
               <div>
-                <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
+                <label for="about" class="block text-sm font-medium text-gray-700"> T\xEAn S\u1EA3n Ph\u1EA9m </label>
                 <div class="mt-1">
-                  <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                  <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                 </div>
-                <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+
               </div>
     
               <div>
               <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
               <div class="mt-1">
-                <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" ></textarea>
               </div>
-              <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+              <label for="about" class="block text-sm font-medium text-gray-700"> Gi\xE1 c\u0169 </label>
+              <div class="mt-1">
+              <input id="post-price-cu" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
+              </div>
+              <label for="about" class="block text-sm font-medium text-gray-700"> Gi\xE1 m\u1EDBi </label>
+              <div class="mt-1">
+              <input id="post-price-moi" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
+              </div>
+        
             </div>
               <div>
                 
@@ -568,9 +568,9 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
     </div>
     </div>
 
-            `},afterRender(){const e=document.querySelector("#form-add-post"),t="y6g4x0t8",o="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";e.addEventListener("submit",async a=>{a.preventDefault();const i=document.querySelector("#file-upload").files[0],s=new FormData;s.append("file",i),s.append("upload_preset",t);const{data:d}=await m.post(o,s,{headers:{"Content-Type":"application/form-data"}});I({title:document.querySelector("#post-name").value,img:d.url,desc:document.querySelector("#post-decs").value}),document.location.href="/admin"})}},$={async render(e){const{data:t}=await x(e);return`
+            `},afterRender(){const t=document.querySelector("#form-add-post"),e="y6g4x0t8",i="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";t.addEventListener("submit",async a=>{a.preventDefault();const s=document.querySelector("#file-upload").files[0],o=new FormData;o.append("file",s),o.append("upload_preset",e);const{data:d}=await g.post(i,o,{headers:{"Content-Type":"application/form-data"}});O({name:document.querySelector("#post-name").value,img:d.url,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/admin"})}},z={async render(t){const{data:e}=await h(t);return`
         
-            ${f.render()}
+            ${v.render()}
             <div>
             <div class="md:grid md:grid-cols-3 md:gap-6">
               <div class="md:col-span-1">
@@ -585,17 +585,25 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                       <div>
                         <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
                         <div class="mt-1">
-                          <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${t.title}</textarea>
+                          <textarea id="post-name" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${e.title}</textarea>
                         </div>
-                        <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+                     
                       </div>
             
                       <div>
                       <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
                       <div class="mt-1">
-                        <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${t.desc}</textarea>
+                        <textarea id="post-decs" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com">${e.desc}</textarea>
                       </div>
-                      <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
+                    
+                    </div>
+                    <label for="about" class="block text-sm font-medium text-gray-700"> Gi\xE1 c\u0169 </label>
+                    <div class="mt-1">
+                    <input id="post-price-cu" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
+                    </div>
+                    <label for="about" class="block text-sm font-medium text-gray-700"> Gi\xE1 m\u1EDBi </label>
+                    <div class="mt-1">
+                    <input id="post-price-moi" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500   border border-gray-300 rounded-md" type="number">
                     </div>
                       <div>
                         
@@ -610,7 +618,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
                               <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <div class="flex text-sm text-gray-600">
-                            <div><img width="200" src="${t.img}" id="img-preview"/></div>
+                            <div><img width="200" src="${e.img}" id="img-preview"/></div>
                               <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                 <span>Upload a file</span>
                                 <input id="file-upload" name="file-upload" type="file" class="sr-only">
@@ -631,7 +639,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
             </div>
             </div>
 
-            `},afterRender(e){const t=document.querySelector("#img-preview");let o="";const a=document.querySelector("#file-upload"),i=document.querySelector("#form-edit-post"),s="y6g4x0t8",d="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";a.addEventListener("change",p=>{t.src=URL.createObjectURL(p.target.files[0])}),i.addEventListener("submit",async p=>{p.preventDefault();const v=a.files[0];if(v){const u=new FormData;u.append("file",v),u.append("upload_preset",s);const{data:k}=await m.post(d,u,{headers:{"Content-Type":"application/form-data"}});o=k.url}M({id:e,title:document.querySelector("#post-name").value,img:o||t.src,desc:document.querySelector("#post-decs").value}),document.location.href="/#/admin"})}},C=e=>{const t="/signup";return l.post(t,e)},A=e=>{const t="/signin";return l.post(t,e)},B={async render(){return`
+            `},afterRender(t){const e=document.querySelector("#img-preview");let i="";const a=document.querySelector("#file-upload"),s=document.querySelector("#form-edit-post"),o="y6g4x0t8",d="https://api.cloudinary.com/v1_1/tr-n-t-ng/image/upload";a.addEventListener("change",m=>{e.src=URL.createObjectURL(m.target.files[0])}),s.addEventListener("submit",async m=>{m.preventDefault();const y=a.files[0];if(y){const p=new FormData;p.append("file",y),p.append("upload_preset",o);const{data:L}=await g.post(d,p,{headers:{"Content-Type":"application/form-data"}});i=L.url}G({id:t,name:document.querySelector("#post-name").value,img:i||e.src,desc:document.querySelector("#post-decs").value,pricecu:document.querySelector("#post-price-cu").value,pricemoi:document.querySelector("#post-price-moi").value}),document.location.href="/#/admin"})}},V=t=>{const e="/signup";return l.post(e,t)},Y=t=>{const e="/signin";return l.post(e,t)},F={async render(){return`
         ${await r.render()}
         <section class="singup">
     <div class="login">
@@ -650,7 +658,7 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
 </div>
 </section>
 
-      `},afterRender(){document.querySelector("#formSignup").addEventListener("submit",t=>{t.preventDefault(),C({email:document.getElementById("email").value,password:document.getElementById("password").value})})}},z={async render(){return`
+      `},afterRender(){document.querySelector("#formSignup").addEventListener("submit",e=>{e.preventDefault(),V({email:document.getElementById("email").value,password:document.getElementById("password").value})})}},W={async render(){return`
   
      ${await r.render()}
      <section class="singup">
@@ -673,4 +681,37 @@ import{t as c,a as m,N as S}from"./vendor.3d4b9f01.js";const T=function(){const 
    
 
 
-      `},afterRender(){const e=document.querySelector("#formSignup");e.addEventListener("submit",async t=>{t.preventDefault();try{const{data:o}=await A({email:document.getElementById("email").value,password:document.getElementById("password").value});console.log(o.user),localStorage.setItem("user",JSON.stringify(o.user)),o.user.id===1?(c.success("\u0110\u0103ng k\xFD th\xE0nh c\xF4ng"),document.location.href="/#/admin"):document.location.href="/#/"}catch(o){c.error(o.response.data),console.log(o.response),e.reset()}})}},n=async(e,t)=>{document.querySelector("#app").innerHTML=await e.render(t),e.afterRender&&await e.afterRender(t)},h=new S("/",{linksSelector:"a",hash:!0});h.on("/admin/*/",()=>{},{before(e){localStorage.getItem("user")&&JSON.parse(localStorage.getItem("user")).id==1?e():document.location.href="/"}});h.on({"/":async()=>n(await N),"/admin/posts/:id/edit":({data:e})=>n($,e.id),"/nu":async()=>n(await P),"/admin":()=>n(w),"/addpost":()=>n(E),"/signup":()=>n(B),"/signin":()=>n(z),"/chitiet/:id":({data:e})=>n(R,e.id)});h.resolve();const q=document.querySelectorAll(".catergory-let-li");q.forEach((e,t)=>{e.addEventListener("click",()=>{e.classList.toggle("block")})});
+      `},afterRender(){const t=document.querySelector("#formSignup");t.addEventListener("submit",async e=>{e.preventDefault();try{const{data:i}=await Y({email:document.getElementById("email").value,password:document.getElementById("password").value});console.log(i.user),localStorage.setItem("user",JSON.stringify(i.user)),i.user.id===1?(c.success("\u0110\u0103ng k\xFD th\xE0nh c\xF4ng"),document.location.href="/#/admin"):document.location.href="/#/"}catch(i){c.error(i.response.data),console.log(i.response),t.reset()}})}},K={render(){let t=[];return localStorage.getItem("cart")&&(t=JSON.parse(localStorage.getItem("cart"))),console.log(t),`
+    ${r.render()}
+    <section>
+    <div class="container">
+    
+        <table>
+            <thead>
+        
+                <th>S\u1EA2N PH\u1EA8M</th>
+                <th>T\xCAN S\u1EA2N PH\u1EA8M</th>
+                <th>M\xC0U</th>
+                <th>SIZE</th>
+                <th>SL</th>
+                <th>TH\xC0NH TI\u1EC0N</th>
+                <th>X\xD3A</th>
+        
+            </thead>
+            <tbody>
+            ${t.map(e=>`
+            
+            <td>     <img style="width: 100px;" src="${e.img}" alt=""></td>
+            <td>${e.name}</td>
+                <td>1</td>
+                <td>1</td>
+                <td>${e.name}</td>
+                <td>1</td>
+            
+            `)}
+                
+            </tbody>
+        </table>
+    </div>
+</section>
+    `}},n=async(t,e)=>{document.querySelector("#app").innerHTML=await t.render(e),t.afterRender&&await t.afterRender(e)},b=new E("/",{linksSelector:"a",hash:!0});b.on("/admin/*/",()=>{},{before(t){localStorage.getItem("user")&&JSON.parse(localStorage.getItem("user")).id==1?t():document.location.href="/"}});b.on({"/":async()=>n(await R),"/admin/posts/:id/edit":({data:t})=>n(z,t.id),"/nu":async()=>n(await D),"/admin":()=>n($),"/addpost":()=>n(U),"/signup":()=>n(F),"/signin":()=>n(W),"/chitiet/:id":({data:t})=>n(J,t.id),"/cart":()=>n(K)});b.resolve();const Q=document.querySelectorAll(".catergory-let-li");Q.forEach((t,e)=>{t.addEventListener("click",()=>{t.classList.toggle("block")})});
