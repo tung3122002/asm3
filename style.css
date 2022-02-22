@@ -112,6 +112,10 @@ margin-top: 190px;
     letter-spacing: 1px;
 
 }
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
 
 .app-container input{
     width: 400px;
@@ -457,3 +461,12 @@ margin-bottom: 30px;
     height: 1000px;
   }
   
+  thead th{
+      padding: 20px;
+      border-bottom: 1px solid #000;
+  }
+  tbody td{
+    padding: 30px;
+    border-bottom: 1px solid #000;
+
+  }

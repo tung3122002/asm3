@@ -8,6 +8,7 @@ import addpost from "./admin/post/add";
 import editpost from "./admin/post/edit";
 import Signup from "./admin/signup";
 import Signin from "./admin/singin";
+import giohang from "./pages/giohang";
 
 const print = async (conten, id) => {
     document.querySelector("#app").innerHTML = await conten.render(id);
@@ -39,6 +40,7 @@ routes.on({
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/chitiet/:id": ({ data }) => print(products, data.id),
+    "/cart": () => print(giohang),
     // "/admin/dashboard": () => print(DashboardPage),
     // "/admin/products": () => console.log("admin product"),
     // "/admin/news": () => print(AdminNews),

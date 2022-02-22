@@ -39,7 +39,7 @@ const header = {
       <div class="other menu">
         <li><input type="text" placeholder="Tìm" name="" id=""> <button class="fas fa-search"></button></li>
         <li><a class="fa fa-paw" href=""></a></li>
-        <li><a class="fa fa-user" href="/signup"></a>
+        <li><a class="fa fa-user" href="/#/signup"></a>
       ${localStorage.getItem("user") ? `
       <ul class="drop-dow">
             <li id="email1"><a href=""></a></li>
@@ -49,7 +49,7 @@ const header = {
           </ul>
       ` : ""}  
         </li>
-        <li><a class="fa fa-shopping-bag" href=""></a>
+        <li><a class="fa fa-shopping-bag" href="/#/cart"></a>
         
         
         </li>
